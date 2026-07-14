@@ -932,14 +932,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Restore session silently
   const authenticated = await initAuth();
 
-  // Guard store pages: redirect to signup.html if not logged in
-  const path = window.location.pathname;
-  const isAuthPage = path.includes('/login.html') || path.includes('/signup.html');
-
-  if (!authenticated && !isAuthPage) {
-    window.location.href = '/signup.html';
-    return;
-  }
+  // Setup navigation features and wishlist hearts
 
   initCartButton();
   initMobileMenu();
